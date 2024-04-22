@@ -1,10 +1,17 @@
-from abc import ABC, abstractmethod
+from serviceable import Serviceable
 
+"""
+This is a simple class that represents a car. It has an engine and a battery.
+  Attributes:
+    engine: An instance of the Engine class.
+    battery: An instance of the Battery class.
+  Methods:
+    needs_service: Returns True if either the engine or the battery needs service.
+"""
+class Car(Serviceable):
+    def __init__(self, engine, battery):
+        self.engine = engine
+        self.Battery = battery
 
-class Car(ABC):
-    def __init__(self, last_service_date):
-        self.last_service_date = last_service_date
-
-    @abstractmethod
     def needs_service(self):
-        pass
+        return self.engine.needs_service() or self.battery.needs_service()
