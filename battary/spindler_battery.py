@@ -14,5 +14,5 @@ class SpindlerBattary(Battary):
     self.last_service_date = last_service_date
 
   def need_service(self):
-    date_need_to_serve = Battary.add_years_to_date(self.last_service_date, 2)
+    date_need_to_serve = Battary.add_years_to_date(self.last_service_date, 3)
     return self.current_date > date_need_to_serve
